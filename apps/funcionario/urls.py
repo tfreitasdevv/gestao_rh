@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import FuncionariosList
+from .views import FuncionariosList, FuncionarioEdit
 
 urlpatterns = [
-    path('funcionarios', FuncionariosList.as_view(), name='list_funcionarios'),
+    path('', FuncionariosList.as_view(), name='list_funcionarios'),
+    path('editar/<int:pk>/',
+         FuncionarioEdit.as_view(), name='edit_funcionarios'),
 ]
