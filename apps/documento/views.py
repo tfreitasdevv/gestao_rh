@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django.views.generic.edit import (DeleteView,
+                                       CreateView)
+from .models import Documento
 
-# Create your views here.
+
+class DocumentoCreate(CreateView):
+    model = Documento
+    fields = ['descricao', 'arquivo']
+
+
+class DocumentoDelete(DeleteView):
+    pass
