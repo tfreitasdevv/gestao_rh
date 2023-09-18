@@ -10,7 +10,8 @@ class Documento(models.Model):
     arquivo = models.FileField(upload_to='documentos')
 
     def get_absolute_url(self):
-        return reverse("list_funcionarios")
+        return reverse('update_funcionario', args=[self
+                                                   .funcionario.id])
 
     def __str__(self):
         return self.descricao

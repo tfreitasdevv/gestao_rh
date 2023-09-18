@@ -4,15 +4,23 @@
 
 {% block main %}
 
-Edit
+    Edit
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form | bootstrap }}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form | bootstrap }}
+        <br>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
     <br>
-    <button type="submit" class="btn btn-primary">Salvar</button>
-</form>
+    <a href="{% url "create_documento" object.id %}" class="btn btn-info">Adicionar documento</a>
+
 <br>
-<a href="{% url "create_documento" %}" class="btn btn-info">Adicionar documento</a>
+
+{% for documento in object.documento_set.all  %}
+
+    <a href="{{ documento.arquivo.url }}">{{ documento }}</a>  <br>
+
+{% endfor %}
 
 {% endblock main %}
