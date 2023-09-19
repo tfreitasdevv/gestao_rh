@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (HoraExtraList,
                     HoraExtraEdit,
-                    HoraExtraDelete)
+                    HoraExtraDelete,
+                    HoraExtraCreate)
 
 
 urlpatterns = [
@@ -10,6 +11,6 @@ urlpatterns = [
          HoraExtraEdit.as_view(), name='edit_hora_extra'),
     path('deletar/<int:pk>/',
          HoraExtraDelete.as_view(), name='delete_hora_extra'),
-    # path('novo/',
-    #      FuncionarioCreate.as_view(), name='create_funcionario'),
+    path('novo/',
+         HoraExtraCreate.as_view(), name='create_hora_extra'),
 ]
