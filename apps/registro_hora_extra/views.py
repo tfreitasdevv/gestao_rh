@@ -1,5 +1,6 @@
+from django.urls import reverse_lazy
 from django.views.generic.list import ListView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from .models import RegistroHoraExtra
 
 
@@ -14,3 +15,8 @@ class HoraExtraList(ListView):
 class HoraExtraEdit(UpdateView):
     model = RegistroHoraExtra
     fields = ['motivo', 'funcionario', 'horas']
+
+
+class HoraExtraDelete(DeleteView):
+    model = RegistroHoraExtra
+    success_url = reverse_lazy('list_hora_extra')

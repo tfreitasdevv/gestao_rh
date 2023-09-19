@@ -3,7 +3,7 @@
 {% block main %}
     <form action="" method=POST>
         {% csrf_token %}
-        <h1>Deseja confirmar a exclusão de {{ obj }}?</h1>
+        <h1>Deseja confirmar a exclusão de {{ object }}?</h1>
         {{ form }}
         <button type="submit">Confirmar</button>
     </form>

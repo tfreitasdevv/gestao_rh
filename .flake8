@@ -1,0 +1,2 @@
+[flake8]
+max-line-length = 120  # Defina o limite desejado, por exemplo, 120 caracteres por linha

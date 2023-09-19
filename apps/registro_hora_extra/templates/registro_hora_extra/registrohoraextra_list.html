@@ -9,9 +9,13 @@
         <a href="{% url "edit_hora_extra" registro_he.id %}">
             {{ registro_he }}
         </a>
-        {% comment %} <a href="{% url "delete_funcionario" funcionario.id %}">Deletar</a> <br> {% endcomment %}
+        <a href="{% url "delete_hora_extra" registro_he.id %}">Deletar</a> <br>
     {% endfor %}
 
     {% comment %} <a href="{% url "create_funcionario" %}" class="btn btn-info">Novo</a> {% endcomment %}
+
+    {% if not object_list %}
+        <h3>Não existem registros de horas extras no banco de dados</h3>
+    {% endif %}
 
 {% endblock main %}
