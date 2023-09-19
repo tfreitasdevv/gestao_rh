@@ -5,9 +5,11 @@
     Banco de Horas <br>
 
     {% for registro_he in object_list %}
-        {{ registro_he }}
-        {% comment %} <a href="{% url "edit_funcionarios" funcionario.id %}">{{ funcionario }}</a>
-        <a href="{% url "delete_funcionario" funcionario.id %}">Deletar</a> <br> {% endcomment %}
+        
+        <a href="{% url "edit_hora_extra" registro_he.id %}">
+            {{ registro_he }}
+        </a>
+        {% comment %} <a href="{% url "delete_funcionario" funcionario.id %}">Deletar</a> <br> {% endcomment %}
     {% endfor %}
 
     {% comment %} <a href="{% url "create_funcionario" %}" class="btn btn-info">Novo</a> {% endcomment %}
